@@ -30,8 +30,8 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
-def load_params(params_path: str) -> dict:
-    """Load parameters from a YAML file."""
+"""def load_params(params_path: str) -> dict:
+    #Load parameters from a YAML file.
     try:
         with open(params_path, 'r') as file:
             params = yaml.safe_load(file)
@@ -45,7 +45,7 @@ def load_params(params_path: str) -> dict:
         raise
     except Exception as e:
         logger.error('Unexpected error: %s', e)
-        raise
+        raise"""
 
 def load_model(file_path: str):
     """Load the trained model from a file."""
