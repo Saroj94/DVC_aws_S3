@@ -5,7 +5,7 @@ import pickle
 import json
 from sklearn.metrics import accuracy_score, precision_score, recall_score, roc_auc_score
 import logging
-#import yaml
+import yaml
 #from dvclive import Live
 
 # Ensure the "logs" directory exists
@@ -30,7 +30,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
-"""def load_params(params_path: str) -> dict:
+def load_params(params_path: str) -> dict:
     #Load parameters from a YAML file.
     try:
         with open(params_path, 'r') as file:
@@ -45,7 +45,7 @@ logger.addHandler(file_handler)
         raise
     except Exception as e:
         logger.error('Unexpected error: %s', e)
-        raise"""
+        raise
 
 def load_model(file_path: str):
     """Load the trained model from a file."""
@@ -112,7 +112,7 @@ def save_metrics(metrics: dict, file_path: str) -> None:
 
 def main():
     try:
-        #params = load_params(params_path='params.yaml')
+        params = load_params(params_path='params.yaml')
         clf = load_model('./models/model.pkl')
         test_data = load_data('./data/processed/test_tfidf.csv')
         
