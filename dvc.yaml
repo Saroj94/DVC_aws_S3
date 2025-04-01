@@ -12,7 +12,7 @@ stages:
     deps:
     - data/raw #input of the data preprocessing stage is the output of the data ingestion stage
     - src/data_preprocessing.py ##depends on itself (component)
-    outs: 
+    outs:
     - data/interim #output of the data preprocessing stage in folder data/interim
   feature_engineering: #name of the component
     cmd: python src/feature_engineering.py #path of the component
@@ -40,3 +40,10 @@ stages:
     - src/model_evaluation.py ##depends on itself (component)
     metrics:
     - reports/metrics.json
+params:
+- dvclive/params.yaml
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
