@@ -1,0 +1,4 @@
+[core]
+    remote = s3bucketproj
+['remote "s3bucketproj"']
+    url = s3://dvcs3-proj
